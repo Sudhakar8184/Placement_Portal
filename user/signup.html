@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>signup.com</title>
+      
+        <style>
+            form {
+                width:400px;
+                background: silver;
+                padding: 20px;
+                margin: 25px 1400px 750px 350px;
+            }
+			input[type=text], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+input[type=password], select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+input[id=country], select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+			.container {
+			height:900px;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.container1{
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    padding: 10px;
+	margin: 25px 1400px 750px 350px;
+}
+.container2{
+    height:900px;
+}
+        </style>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+function myfunction()
+{
+    var name = document.form.name;
+    var email = document.form.email;
+    var college = document.form.college;
+    var percentage = document.form.percentage;
+    var password = document.form.password;
+	var uid_len = name.value.length;
+    var uid_len1 = college.value.length;
+	var uid_len2 = percentage.value.length;
+	var uid_len3 = password.value.length;
+    var percen = /^(\d\d?(\.\d\d?)?|100(\.00?)?)$/;
+    var regex = /^[a-zA-Z ]*$/;  
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    mx=5;my=20;x=7;y=12;
+    if(uid_len == 0 || uid_len >= my || uid_len < mx|| !name.value.match(regex))
+    {
+    alert("Please enter valid student name / length be between "+mx+" to "+my);
+    name.focus();
+    return false;
+    }
+   else if(uid_len1== 0 || uid_len1 >= my || uid_len1 <= 2|| !college.value.match(regex))
+    {
+    alert("Please enter valid college / length be between "+2+" to "+my);
+    college.focus();
+    return false;
+    }
+    
+   else if (!email.value.match(mailformat))
+    {
+        alert("You have entered an invalid email address!");
+        email.focus();
+        return false;
+    }
+	else if (!percentage.value.match(percen))
+    {
+       alert("Please enter number of percentage like 77.6/77.0");
+        percentage.focus();
+        return false;
+    }
+	else if (uid_len3 < mx)
+    {
+        window.alert("Please keep password more than "+mx);
+        password.focus();
+        return false;
+    }
+    return true;
+}
+
+</script>
+    
+    </head>
+    <body style="height:900px;">
+	<div class="container2">
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Placement Portal</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="home.php">Home</a></li>
+	  </ul>
+	  <p align="right">
+            <a href="home.php" class="btn btn-info">Login</button>
+			</p></a>
+  </div>
+</nav>
+  <center><h1>Create yours Placement Portal</h1></center>
+   <div class="container">
+ <form  action="signupphp.php" method="post" name="form" onsubmit="return myfunction();">
+<table>
+<tr>
+    <td><label><b>Name</b></label></td>
+	<div class="form-group">
+    <td><input type="text" placeholder="Enter Name " name="name" class="form-control" required></td>
+	</div>
+</tr>
+	<tr>
+
+	<td><label><b>Email</b></label></td>
+	<div class="form-group">
+    <td><input type="text" placeholder="Enter Email" class="form-control" name="email" required></td>
+	</div>
+</tr> 
+<tr>
+	 <td><label><b>college</b></label></td>
+	 <div class="form-group">
+    <td><input type="text" placeholder="Enter your college" class="form-control" name="college" required></td>
+	</div>
+</tr>	
+<tr>	
+	<td><label><b>percentage</b></label></td>
+	<div class="form-group">
+    <td><input type="text" placeholder="Enter your percentage" class="form-control" name="percentage" required></td>
+	</div>
+ </tr>
+<tr><td><label><b>Gender</b></label></td>
+<div class="form-group">
+<td><input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender"  value="female"> Female</td>
+  </div>
+</tr>
+
+	<div class="space"><tr>
+	
+    <td><label for="degree">Degree</label></td>
+	<div class="form-group">
+    <td><select id="degree" name="degree" class="form-control">
+	<option name="degree">select your Degree</option>
+	<option name="degree">B.Tech</option>
+      <option name="degree">B.Tech Dual Degree</option>
+      <option name="degree">MBA</option>
+      <option name="degree">B.com</option>
+        </select></td>
+		</div>
+		
+</tr></div>
+	
+	<tr>
+    <td><label for="stream">Stream</label></td>
+	<div class="form-group">
+    <td><select id="stream" name="stream" class="form-control">
+	<option name="stream">select your Stream</option>
+	<option name="stream">CSE</option>
+      <option name="stream">ECE</option>
+      <option name="stream">BBA</option>
+      <option name="stream">ME</option>
+        </select></td>
+		</div>
+	</tr>
+	<tr>
+    <td><label for="state">country</label></td>
+	<div class="form-group">
+    <td><select id="state" name="state" class="form-control">
+	<option name="state">select the country</option>
+	  <option name="state">India</option>
+      <option name="state">Australia</option>
+      <option name="state">Canada</option>
+      <option name="state">USA</option>
+        </select></td>
+		</div>
+</tr>
+	<tr>
+    <td><label><b>Password</b></label></td>
+	<div class="form-group">
+    <td><input type="password" placeholder="Enter Password" class="form-control" name="password" required></td>
+	</div>
+</tr> 
+<tr>
+    <td><label><b>confrim Password</b></label></td>
+	<div class="form-group">
+    <td><input type="password" placeholder="Repeat Password" class="form-control" name="psw-repeat" required></td>
+	</div>
+    </tr> 
+	</table>
+	
+	<input type="checkbox" checked="checked">
+	Remember me
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
+
+    <div class="clearfix"> </div>
+     <center> <a href="home.php" class="btn btn-info" name="cancel">Cancel</a> 
+      <button type="submit" class="btn btn-info" name="submit">submit</button>
+    </center>
+  </div>
+</form> 
+</table>
+</div>
+
+    </body>
+</html>

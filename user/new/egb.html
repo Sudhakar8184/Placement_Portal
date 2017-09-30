@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>placementprotal.com</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<style>
+	
+	.container {
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+	</style>
+	<script>
+	function ajax_func(){
+			
+				 xmlhttp = new XMLHttpRequest();
+				
+				xmlhttp.onreadystatechange = function (){
+					if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+						document.getElementById('get_data').innerHTML = xmlhttp.responseText;
+					}
+				}
+				xmlhttp.open('GET', 'ajaxprojectphp.php', true);
+				xmlhttp.send();
+			}
+			</script>
+	</head>
+    <body style="BACKGROUND-COLOR: lightblue">
+        
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+      <img src="Portal.png " alt="SPS" style="width:200px;height:200px;">
+      
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="gopi.html">Home</a></li>
+      <li><a href="#"> About Us</a></li>
+      <li><a href="#">Career</a></li>
+      <li><a href="#">Contact US</a></li>
+    </ul>
+      
+      <br><br>
+      <form method="post" action="logoutServlet" class="navbar navbar-right text-center">
+       <a href="gopi.html" target="_self"  class="btn btn-info" name="signup" >Logout
+      </a>
+          </form>  
+        </div>
+</nav>
+<center><h1><b>WELCOME TO PLACEMENT PORTAL</b>
+<div class="container">
+<p class="table">
+<form>
+<table>
+<tr>
+    <td>Name</td>
+    <td>:</td>
+</tr>
+	<tr>
+
+	<td>Email</td>
+    <td>:</td>
+</tr> 
+<tr>
+	 <td>College</td>
+    <td>:</td>
+</tr>	
+<tr>	
+	<td>Percentage</td>
+    <td>:</td>
+ </tr>
+ </table></center>
+ </form>
+ </p>
+<center> <h1>YOU ARE ELIGIBLE FOR</h1></center>
+<table border="1" width="1400">
+  <tr>
+    <th>S.No</th>
+    <th>Company Name</th>
+    <th>Salary</th>
+  </tr>
+  <tr>
+    <td><b>1</b></td>
+    <td><b>DELL</b></td>
+    <td><b>50000</b></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+
+
+       

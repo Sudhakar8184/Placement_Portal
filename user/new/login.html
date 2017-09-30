@@ -1,0 +1,108 @@
+<?php
+$server="localhost";
+$username="placement";
+$password="";
+$db ="placement";
+ $con=mysqli_connect($server, $username, $password, $db);
+?>
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>placementprotal.com</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<style>
+	.table
+	{
+	text-align: left;
+	margin: 0px 50px 0px 50px;<!--top, right, bottom, and left)-->
+	}
+	.container {
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+	</style>
+	</head>
+    <body style="BACKGROUND-COLOR: lightblue">
+        
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+      <img src="Portal.png " alt="SPS" style="width:200px;height:200px;">
+      
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home.html">Home</a></li>
+      <li><a href="#"> About Us</a></li>
+      <li><a href="#">Career</a></li>
+      <li><a href="#">Contact US</a></li>
+    </ul>
+      
+      <br><br>
+      <form method="post" action="logoutServlet" class="navbar navbar-right text-center">
+       <a href="home.html" target="_self"  class="btn btn-info" name="signup" >Logout
+      </a>
+          </form>  
+        </div>
+</nav>
+<center><h1><b>WELCOME TO PLACEMENT PORTAL</b>
+<div class="container">
+<p class="table">
+<form>
+<table>
+<?php
+if(isset($_POST['u_id']))
+{
+$sql1="SELECT * FROM placement WHERE u_id='$_POST[u_id]'";
+ $run=mysqli_query($con,$sql1);
+while($row=mysqli_fetch_assoc($run))
+{
+ echo "<tr>
+    <td>Name</td>
+    <td>$row[name]</td> 
+</tr>
+	<tr>
+
+	<td>Email</td>
+    <td>Sudha@gmail</td>
+</tr> 
+<tr>
+	 <td>College</td>
+    <td>:lpu</td>
+</tr>	
+<tr>	
+	<td>percentage</td>
+    <td>:70</td>
+ </tr>";
+ }
+ }
+ ?>
+ </table></center>
+ </form>
+ </p>
+<center><a href="egb.html"  class="btn btn-success">CHECK YOUR ELIGIBILITY</a></center>
+</div>
+</body>
+</html>
+
+
+       

@@ -1,0 +1,43 @@
+.navbar-custum{}
+
+.navbar a{
+	color: white;
+	font-weight:bold;
+}
+
+.navbar a:hover{
+	color:blue;
+	
+}
+header{
+	height:65%;
+	color:white;
+	padding:150;
+	font-weight:bold;
+}
+header p{
+ font-size:20px;
+ text-shadow: 3px 3px 5px black;
+}
+
+.block{
+	margin:10px;
+	
+}
+
+section{
+	background:green;
+	width:100%;
+	height:30%;
+}
+section h2{
+	text-align:center;
+	padding:20px;
+	font-size:50px;
+	color:silver;
+}
+section p{
+	text-align:center;
+	
+	font-size:15px;
+}
